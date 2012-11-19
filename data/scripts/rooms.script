@@ -1,0 +1,565 @@
+// Rooms:
+// 
+//  6  7  8
+//  3  4  5
+//  0  1  2
+
+// button in room #0
+// access enable/disable to room #1 and #4
+toggle_0 {
+	play_sound BUTTON #0 #0 #1
+
+	toggle NONE INDESTRUCTIBLE #14 #-1 #7
+	toggle NONE INDESTRUCTIBLE #14 #0 #7
+	toggle NONE INDESTRUCTIBLE #14 #1 #7
+	toggle NONE INDESTRUCTIBLE #14 #-1 #8
+	toggle NONE INDESTRUCTIBLE #14 #0 #8
+	toggle NONE INDESTRUCTIBLE #14 #1 #8
+
+	toggle NONE INDESTRUCTIBLE #6 #-1 #15
+	toggle NONE INDESTRUCTIBLE #6 #0 #15
+	toggle NONE INDESTRUCTIBLE #6 #1 #15
+	toggle NONE INDESTRUCTIBLE #7 #-1 #15
+	toggle NONE INDESTRUCTIBLE #7 #0 #15
+	toggle NONE INDESTRUCTIBLE #7 #1 #15
+}
+
+// weight triggers in room #2
+2_w0 {
+	toggle NONE INDESTRUCTIBLE #6 #0 #2
+	toggle NONE INDESTRUCTIBLE #6 #0 #3
+}
+
+2_w1 {
+	toggle NONE INDESTRUCTIBLE #8 #1 #0
+	toggle NONE INDESTRUCTIBLE #8 #1 #1
+}
+
+2_w2 {
+	toggle NONE INDESTRUCTIBLE #10 #2 #2
+	toggle NONE INDESTRUCTIBLE #10 #2 #3
+}
+
+// weight triggers in room #4 (now #3)
+4_w0 {
+	toggle NONE INDESTRUCTIBLE #11 #0 #3
+	toggle NONE INDESTRUCTIBLE #11 #0 #4
+	toggle NONE INDESTRUCTIBLE #3 #0 #11
+	toggle NONE INDESTRUCTIBLE #4 #0 #11
+}
+
+4_w1 {
+	toggle NONE INDESTRUCTIBLE #0 #1 #4
+	toggle NONE INDESTRUCTIBLE #1 #1 #4
+	toggle NONE INDESTRUCTIBLE #8 #1 #-3
+	toggle NONE INDESTRUCTIBLE #8 #1 #-4
+}
+
+4_w2 {
+	toggle NONE INDESTRUCTIBLE #4 #2 #3
+	toggle NONE INDESTRUCTIBLE #4 #2 #4
+	toggle NONE INDESTRUCTIBLE #-3 #2 #11
+	toggle NONE INDESTRUCTIBLE #-4 #2 #11
+}
+
+// weight trigger in room #8 (now #6)
+8_w0 {
+	// create blocks
+	modify METAL #2 #0 #0
+	modify METAL #2 #1 #0
+	modify METAL #2 #2 #0
+	modify METAL #2 #3 #0
+
+	modify METAL #0 #0 #2
+	modify METAL #0 #1 #2
+	modify METAL #0 #2 #2
+	modify METAL #0 #3 #2
+
+	// doors
+	modify NONE #6 #0 #14
+	modify NONE #6 #1 #14
+	modify NONE #6 #2 #14
+	modify NONE #7 #0 #14
+	modify NONE #7 #1 #14
+	modify NONE #7 #2 #14
+}
+
+// weight trigger in room #12 (now #7)
+12_w0 {
+	modify INDESTRUCTIBLE #0 #0 #-1
+	modify INDESTRUCTIBLE #1 #0 #-1
+	modify INDESTRUCTIBLE #2 #0 #-1
+	modify INDESTRUCTIBLE #2 #0 #0
+	modify INDESTRUCTIBLE #2 #0 #1
+	modify INDESTRUCTIBLE #2 #0 #2
+	modify INDESTRUCTIBLE #1 #0 #2
+	modify INDESTRUCTIBLE #0 #0 #2
+	modify INDESTRUCTIBLE #-1 #0 #2
+	modify INDESTRUCTIBLE #-2 #0 #2
+	modify INDESTRUCTIBLE #-2 #0 #1
+	modify INDESTRUCTIBLE #-2 #0 #0
+	modify INDESTRUCTIBLE #-2 #0 #-1
+	modify INDESTRUCTIBLE #-2 #0 #-2
+	modify INDESTRUCTIBLE #-2 #0 #-3
+	modify INDESTRUCTIBLE #-1 #0 #-3
+	modify INDESTRUCTIBLE #0 #0 #-3
+	modify INDESTRUCTIBLE #1 #0 #-3
+	modify INDESTRUCTIBLE #2 #0 #-3
+	modify INDESTRUCTIBLE #3 #0 #-3
+	modify INDESTRUCTIBLE #4 #0 #-3
+	modify INDESTRUCTIBLE #4 #0 #-2
+	modify INDESTRUCTIBLE #4 #0 #-1
+	modify INDESTRUCTIBLE #4 #0 #0
+	modify INDESTRUCTIBLE #4 #0 #1
+	modify INDESTRUCTIBLE #4 #0 #2
+	modify INDESTRUCTIBLE #4 #0 #3
+	modify INDESTRUCTIBLE #4 #0 #4
+	modify INDESTRUCTIBLE #3 #0 #4
+	modify INDESTRUCTIBLE #2 #0 #4
+	modify INDESTRUCTIBLE #1 #0 #4
+	modify INDESTRUCTIBLE #0 #0 #4
+	modify INDESTRUCTIBLE #-1 #0 #4
+	modify INDESTRUCTIBLE #-2 #0 #4
+	modify INDESTRUCTIBLE #-3 #0 #4
+	modify INDESTRUCTIBLE #-4 #0 #4
+	modify INDESTRUCTIBLE #-4 #0 #3
+	modify INDESTRUCTIBLE #-4 #0 #2
+	modify INDESTRUCTIBLE #-4 #0 #1
+	modify INDESTRUCTIBLE #-4 #0 #0
+	modify INDESTRUCTIBLE #-4 #0 #-1
+	modify INDESTRUCTIBLE #-4 #0 #-2
+	modify INDESTRUCTIBLE #-4 #0 #-3
+	modify INDESTRUCTIBLE #-4 #0 #-4
+	modify INDESTRUCTIBLE #-4 #0 #-5
+	modify INDESTRUCTIBLE #-3 #0 #-5
+	modify INDESTRUCTIBLE #-2 #0 #-5
+	modify INDESTRUCTIBLE #-1 #0 #-5
+	modify INDESTRUCTIBLE #0 #0 #-5
+	modify INDESTRUCTIBLE #1 #0 #-5
+	modify INDESTRUCTIBLE #2 #0 #-5
+	modify INDESTRUCTIBLE #3 #0 #-5
+	modify INDESTRUCTIBLE #4 #0 #-5
+	modify INDESTRUCTIBLE #5 #0 #-5
+	modify INDESTRUCTIBLE #6 #0 #-5
+	modify INDESTRUCTIBLE #6 #0 #-4
+	modify INDESTRUCTIBLE #6 #0 #-3
+	modify INDESTRUCTIBLE #6 #0 #-2
+	modify INDESTRUCTIBLE #6 #0 #-1
+	modify INDESTRUCTIBLE #6 #0 #0
+	modify INDESTRUCTIBLE #6 #0 #1
+	modify INDESTRUCTIBLE #6 #0 #2
+	modify INDESTRUCTIBLE #6 #0 #3
+	modify INDESTRUCTIBLE #6 #0 #4
+	modify INDESTRUCTIBLE #6 #0 #5
+	modify INDESTRUCTIBLE #6 #0 #6
+	modify INDESTRUCTIBLE #5 #0 #6
+	modify INDESTRUCTIBLE #4 #0 #6
+	modify INDESTRUCTIBLE #3 #0 #6
+	modify INDESTRUCTIBLE #2 #0 #6
+	modify INDESTRUCTIBLE #1 #0 #6
+	modify INDESTRUCTIBLE #0 #0 #6
+	modify INDESTRUCTIBLE #-1 #0 #6
+	modify INDESTRUCTIBLE #-2 #0 #6
+	modify INDESTRUCTIBLE #-3 #0 #6
+	modify INDESTRUCTIBLE #-4 #0 #6
+	modify INDESTRUCTIBLE #-5 #0 #6
+	modify INDESTRUCTIBLE #-6 #0 #6
+	modify INDESTRUCTIBLE #-6 #0 #5
+	modify INDESTRUCTIBLE #-6 #0 #4
+	modify INDESTRUCTIBLE #-6 #0 #3
+	modify INDESTRUCTIBLE #-6 #0 #2
+	modify INDESTRUCTIBLE #-6 #0 #-1
+	modify INDESTRUCTIBLE #-6 #0 #-2
+	modify INDESTRUCTIBLE #-6 #0 #-3
+	modify INDESTRUCTIBLE #-6 #0 #-4
+	modify INDESTRUCTIBLE #-6 #0 #-5
+	modify INDESTRUCTIBLE #-6 #0 #-6
+	
+	modify INDESTRUCTIBLE #0 #1 #-1
+	modify INDESTRUCTIBLE #1 #1 #-1
+	modify INDESTRUCTIBLE #2 #1 #-1
+	modify INDESTRUCTIBLE #2 #1 #0
+	modify INDESTRUCTIBLE #2 #1 #1
+	modify INDESTRUCTIBLE #2 #1 #2
+	modify INDESTRUCTIBLE #1 #1 #2
+	modify INDESTRUCTIBLE #0 #1 #2
+	modify INDESTRUCTIBLE #-1 #1 #2
+	modify INDESTRUCTIBLE #-2 #1 #2
+	modify INDESTRUCTIBLE #-2 #1 #1
+	modify INDESTRUCTIBLE #-2 #1 #0
+	modify INDESTRUCTIBLE #-2 #1 #-1
+	modify INDESTRUCTIBLE #-2 #1 #-2
+	modify INDESTRUCTIBLE #-2 #1 #-3
+	modify INDESTRUCTIBLE #-1 #1 #-3
+	modify INDESTRUCTIBLE #0 #1 #-3
+	modify INDESTRUCTIBLE #1 #1 #-3
+	modify INDESTRUCTIBLE #2 #1 #-3
+	modify INDESTRUCTIBLE #3 #1 #-3
+	modify INDESTRUCTIBLE #4 #1 #-3
+	modify INDESTRUCTIBLE #4 #1 #-2
+	modify INDESTRUCTIBLE #4 #1 #-1
+	modify INDESTRUCTIBLE #4 #1 #0
+	modify INDESTRUCTIBLE #4 #1 #1
+	modify INDESTRUCTIBLE #4 #1 #2
+	modify INDESTRUCTIBLE #4 #1 #3
+	modify INDESTRUCTIBLE #4 #1 #4
+	modify INDESTRUCTIBLE #3 #1 #4
+	modify INDESTRUCTIBLE #2 #1 #4
+	modify INDESTRUCTIBLE #1 #1 #4
+	modify INDESTRUCTIBLE #0 #1 #4
+	modify INDESTRUCTIBLE #-1 #1 #4
+	modify INDESTRUCTIBLE #-2 #1 #4
+	modify INDESTRUCTIBLE #-3 #1 #4
+	modify INDESTRUCTIBLE #-4 #1 #4
+	modify INDESTRUCTIBLE #-4 #1 #3
+	modify INDESTRUCTIBLE #-4 #1 #2
+	modify INDESTRUCTIBLE #-4 #1 #1
+	modify INDESTRUCTIBLE #-4 #1 #0
+	modify INDESTRUCTIBLE #-4 #1 #-1
+	modify INDESTRUCTIBLE #-4 #1 #-2
+	modify INDESTRUCTIBLE #-4 #1 #-3
+	modify INDESTRUCTIBLE #-4 #1 #-4
+	modify INDESTRUCTIBLE #-4 #1 #-5
+	modify INDESTRUCTIBLE #-3 #1 #-5
+	modify INDESTRUCTIBLE #-2 #1 #-5
+	modify INDESTRUCTIBLE #-1 #1 #-5
+	modify INDESTRUCTIBLE #0 #1 #-5
+	modify INDESTRUCTIBLE #1 #1 #-5
+	modify INDESTRUCTIBLE #2 #1 #-5
+	modify INDESTRUCTIBLE #3 #1 #-5
+	modify INDESTRUCTIBLE #4 #1 #-5
+	modify INDESTRUCTIBLE #5 #1 #-5
+	modify INDESTRUCTIBLE #6 #1 #-5
+	modify INDESTRUCTIBLE #6 #1 #-4
+	modify INDESTRUCTIBLE #6 #1 #-3
+	modify INDESTRUCTIBLE #6 #1 #-2
+	modify INDESTRUCTIBLE #6 #1 #-1
+	modify INDESTRUCTIBLE #6 #1 #0
+	modify INDESTRUCTIBLE #6 #1 #1
+	modify INDESTRUCTIBLE #6 #1 #2
+	modify INDESTRUCTIBLE #6 #1 #3
+	modify INDESTRUCTIBLE #6 #1 #4
+	modify INDESTRUCTIBLE #6 #1 #5
+	modify INDESTRUCTIBLE #6 #1 #6
+	modify INDESTRUCTIBLE #5 #1 #6
+	modify INDESTRUCTIBLE #4 #1 #6
+	modify INDESTRUCTIBLE #3 #1 #6
+	modify INDESTRUCTIBLE #2 #1 #6
+	modify INDESTRUCTIBLE #1 #1 #6
+	modify INDESTRUCTIBLE #0 #1 #6
+	modify INDESTRUCTIBLE #-1 #1 #6
+	modify INDESTRUCTIBLE #-2 #1 #6
+	modify INDESTRUCTIBLE #-3 #1 #6
+	modify INDESTRUCTIBLE #-4 #1 #6
+	modify INDESTRUCTIBLE #-5 #1 #6
+	modify INDESTRUCTIBLE #-6 #1 #6
+	modify INDESTRUCTIBLE #-6 #1 #5
+	modify INDESTRUCTIBLE #-6 #1 #4
+	modify INDESTRUCTIBLE #-6 #1 #3
+	modify INDESTRUCTIBLE #-6 #1 #2
+	modify INDESTRUCTIBLE #-6 #1 #-1
+	modify INDESTRUCTIBLE #-6 #1 #-2
+	modify INDESTRUCTIBLE #-6 #1 #-3
+	modify INDESTRUCTIBLE #-6 #1 #-4
+	modify INDESTRUCTIBLE #-6 #1 #-5
+	modify INDESTRUCTIBLE #-6 #1 #-6
+
+	// Door
+	modify NONE #-7 #0 #0
+	modify NONE #-7 #1 #0
+	modify NONE #-7 #2 #0
+	modify NONE #-7 #0 #1
+	modify NONE #-7 #1 #1
+	modify NONE #-7 #2 #1
+
+	modify NONE #0 #0 #8
+	modify NONE #0 #1 #8
+	modify NONE #0 #2 #8
+	modify NONE #1 #0 #8
+	modify NONE #1 #1 #8
+	modify NONE #1 #2 #8
+}
+
+enable_door {
+	play_sound BUTTON #0 #0 #1
+	modify NONE #14 #-1 #13
+	activate door NEXT
+}
+
+almost_enable_door {
+	modify INDESTRUCTIBLE #7 #1 #7
+	activate door NEXT
+}
+
+5_w0 {
+	modify SPAWNER #-3 #-1 #0
+	modify SPAWNER #0 #-1 #3
+	modify SPAWNER #0 #-1 #-3
+	modify SPAWNER #3 #-1 #0
+
+	toggle NONE INDESTRUCTIBLE #8 #0 #0
+	toggle NONE INDESTRUCTIBLE #8 #0 #1
+	toggle NONE INDESTRUCTIBLE #8 #1 #0
+	toggle NONE INDESTRUCTIBLE #8 #1 #1
+	toggle NONE INDESTRUCTIBLE #8 #2 #0
+	toggle NONE INDESTRUCTIBLE #8 #2 #1
+}
+
+// weight trigger in #1
+// barrier in front, so player has to jump around it
+toggle_1 {
+	// barriers
+	modify INDESTRUCTIBLE #0 #1 #3
+	modify INDESTRUCTIBLE #0 #3 #3
+	modify INDESTRUCTIBLE #0 #5 #3
+	modify INDESTRUCTIBLE #-1 #1 #3
+	modify INDESTRUCTIBLE #-1 #3 #3
+	modify INDESTRUCTIBLE #-1 #5 #3
+	modify INDESTRUCTIBLE #-2 #1 #3
+	modify INDESTRUCTIBLE #-2 #3 #3
+	modify INDESTRUCTIBLE #-2 #5 #3
+	modify INDESTRUCTIBLE #-3 #1 #3
+	modify INDESTRUCTIBLE #-3 #3 #3
+	modify INDESTRUCTIBLE #-3 #5 #3
+	modify INDESTRUCTIBLE #-4 #1 #3
+	modify INDESTRUCTIBLE #-4 #3 #3
+	modify INDESTRUCTIBLE #-4 #5 #3
+	modify INDESTRUCTIBLE #-5 #1 #3
+	modify INDESTRUCTIBLE #-5 #3 #3
+	modify INDESTRUCTIBLE #-5 #5 #3
+	modify INDESTRUCTIBLE #-6 #1 #3
+	modify INDESTRUCTIBLE #-6 #3 #3
+	modify INDESTRUCTIBLE #-6 #5 #3
+	modify INDESTRUCTIBLE #-7 #1 #3
+	modify INDESTRUCTIBLE #-7 #3 #3
+	modify INDESTRUCTIBLE #-7 #5 #3
+	modify INDESTRUCTIBLE #-8 #1 #3
+	modify INDESTRUCTIBLE #-8 #3 #3
+	modify INDESTRUCTIBLE #-8 #5 #3
+	modify INDESTRUCTIBLE #-9 #1 #3
+	modify INDESTRUCTIBLE #-9 #3 #3
+	modify INDESTRUCTIBLE #-9 #5 #3
+	modify INDESTRUCTIBLE #-10 #1 #3
+	modify INDESTRUCTIBLE #-10 #3 #3
+	modify INDESTRUCTIBLE #-10 #5 #3
+
+	modify INDESTRUCTIBLE #-3 #1 #4
+	modify INDESTRUCTIBLE #-3 #3 #4
+	modify INDESTRUCTIBLE #-3 #5 #4
+	modify INDESTRUCTIBLE #-3 #1 #5
+	modify INDESTRUCTIBLE #-3 #3 #5
+	modify INDESTRUCTIBLE #-3 #5 #5
+	modify INDESTRUCTIBLE #-3 #1 #6
+	modify INDESTRUCTIBLE #-3 #3 #6
+	modify INDESTRUCTIBLE #-3 #5 #6
+	modify INDESTRUCTIBLE #-3 #1 #7
+	modify INDESTRUCTIBLE #-3 #3 #7
+	modify INDESTRUCTIBLE #-3 #5 #7
+	modify INDESTRUCTIBLE #-3 #1 #8
+	modify INDESTRUCTIBLE #-3 #3 #8
+	modify INDESTRUCTIBLE #-3 #5 #8
+
+	modify INDESTRUCTIBLE #-5 #1 #11
+	modify INDESTRUCTIBLE #-5 #3 #11
+	modify INDESTRUCTIBLE #-5 #5 #11
+	modify INDESTRUCTIBLE #-6 #1 #11
+	modify INDESTRUCTIBLE #-6 #3 #11
+	modify INDESTRUCTIBLE #-6 #5 #11
+	modify INDESTRUCTIBLE #-7 #1 #11
+	modify INDESTRUCTIBLE #-7 #3 #11
+	modify INDESTRUCTIBLE #-7 #5 #11
+	modify INDESTRUCTIBLE #-8 #1 #11
+	modify INDESTRUCTIBLE #-8 #3 #11
+	modify INDESTRUCTIBLE #-8 #5 #11
+	modify INDESTRUCTIBLE #-8 #1 #12
+	modify INDESTRUCTIBLE #-8 #3 #12
+	modify INDESTRUCTIBLE #-8 #5 #12
+	modify INDESTRUCTIBLE #-8 #1 #13
+	modify INDESTRUCTIBLE #-8 #3 #13
+	modify INDESTRUCTIBLE #-8 #5 #13
+
+	// doors
+	modify NONE #1 #0 #6
+	modify NONE #1 #1 #6
+	modify NONE #1 #2 #6
+	modify NONE #1 #0 #7
+	modify NONE #1 #1 #7
+	modify NONE #1 #2 #7
+
+	modify NONE #-6 #0 #14
+	modify NONE #-6 #1 #14
+	modify NONE #-6 #2 #14
+	modify NONE #-7 #0 #14
+	modify NONE #-7 #1 #14
+	modify NONE #-7 #2 #14
+}
+
+lava_3x3 {
+	modify NONE #-1 #-1 #-1
+	modify NONE #-1 #-1 #0
+	modify NONE #-1 #-1 #1
+	modify NONE #0 #-1 #-1
+	modify NONE #0 #-1 #0
+	modify NONE #0 #-1 #1
+	modify NONE #1 #-1 #-1
+	modify NONE #1 #-1 #0
+	modify NONE #1 #-1 #1
+}
+
+lava_room {
+	modify NONE #-5 #-1 #-5
+	modify NONE #-5 #-1 #-4
+	modify NONE #-5 #-1 #-3
+	modify NONE #-5 #-1 #-2
+	modify NONE #-5 #-1 #-1
+	modify NONE #-5 #-1 #0
+	modify NONE #-5 #-1 #1
+	modify NONE #-5 #-1 #2
+	modify NONE #-5 #-1 #3
+	modify NONE #-5 #-1 #4
+	modify NONE #-5 #-1 #5
+	modify NONE #-5 #-1 #6
+
+	modify NONE #-4 #-1 #-5
+	modify NONE #-4 #-1 #-4
+	modify NONE #-4 #-1 #-3
+	modify NONE #-4 #-1 #-2
+	modify NONE #-4 #-1 #-1
+	modify NONE #-4 #-1 #0
+	modify NONE #-4 #-1 #1
+	modify NONE #-4 #-1 #2
+	modify NONE #-4 #-1 #3
+	modify NONE #-4 #-1 #4
+	modify NONE #-4 #-1 #5
+	modify NONE #-4 #-1 #6
+	
+	modify NONE #-3 #-1 #-5
+	modify NONE #-3 #-1 #-4
+	modify NONE #-3 #-1 #-3
+	modify NONE #-3 #-1 #-2
+	modify NONE #-3 #-1 #-1
+	modify NONE #-3 #-1 #0
+	modify NONE #-3 #-1 #1
+	modify NONE #-3 #-1 #2
+	modify NONE #-3 #-1 #3
+	modify NONE #-3 #-1 #4
+	modify NONE #-3 #-1 #5
+	modify NONE #-3 #-1 #6
+
+	modify NONE #-2 #-1 #-5
+	modify NONE #-2 #-1 #-4
+	modify NONE #-2 #-1 #-3
+	modify NONE #-2 #-1 #-2
+	modify NONE #-2 #-1 #-1
+	modify NONE #-2 #-1 #0
+	modify NONE #-2 #-1 #1
+	modify NONE #-2 #-1 #2
+	modify NONE #-2 #-1 #3
+	modify NONE #-2 #-1 #4
+	modify NONE #-2 #-1 #5
+	modify NONE #-2 #-1 #6
+	
+	modify NONE #-1 #-1 #-5
+	modify NONE #-1 #-1 #-4
+	modify NONE #-1 #-1 #-3
+	modify NONE #-1 #-1 #-2
+	modify NONE #-1 #-1 #-1
+	modify NONE #-1 #-1 #0
+	modify NONE #-1 #-1 #1
+	modify NONE #-1 #-1 #2
+	modify NONE #-1 #-1 #3
+	modify NONE #-1 #-1 #4
+	modify NONE #-1 #-1 #5
+	modify NONE #-1 #-1 #6
+
+	modify NONE #0 #-1 #-5
+	modify NONE #0 #-1 #-4
+	modify NONE #0 #-1 #-3
+	modify NONE #0 #-1 #-2
+	modify NONE #0 #-1 #-1
+	modify NONE #0 #-1 #0
+	modify NONE #0 #-1 #1
+	modify NONE #0 #-1 #2
+	modify NONE #0 #-1 #3
+	modify NONE #0 #-1 #4
+	modify NONE #0 #-1 #5
+	modify NONE #0 #-1 #6
+	
+	modify NONE #1 #-1 #-5
+	modify NONE #1 #-1 #-4
+	modify NONE #1 #-1 #-3
+	modify NONE #1 #-1 #-2
+	modify NONE #1 #-1 #-1
+	modify NONE #1 #-1 #0
+	modify NONE #1 #-1 #1
+	modify NONE #1 #-1 #2
+	modify NONE #1 #-1 #3
+	modify NONE #1 #-1 #4
+	modify NONE #1 #-1 #5
+	modify NONE #1 #-1 #6
+
+	modify NONE #2 #-1 #-5
+	modify NONE #2 #-1 #-4
+	modify NONE #2 #-1 #-3
+	modify NONE #2 #-1 #-2
+	modify NONE #2 #-1 #-1
+	modify NONE #2 #-1 #0
+	modify NONE #2 #-1 #1
+	modify NONE #2 #-1 #2
+	modify NONE #2 #-1 #3
+	modify NONE #2 #-1 #4
+	modify NONE #2 #-1 #5
+	modify NONE #2 #-1 #6
+	
+	modify NONE #3 #-1 #-5
+	modify NONE #3 #-1 #-4
+	modify NONE #3 #-1 #-3
+	modify NONE #3 #-1 #-2
+	modify NONE #3 #-1 #-1
+	modify NONE #3 #-1 #0
+	modify NONE #3 #-1 #1
+	modify NONE #3 #-1 #2
+	modify NONE #3 #-1 #3
+	modify NONE #3 #-1 #4
+	modify NONE #3 #-1 #5
+	modify NONE #3 #-1 #6
+	
+	modify NONE #4 #-1 #-5
+	modify NONE #4 #-1 #-4
+	modify NONE #4 #-1 #-3
+	modify NONE #4 #-1 #-2
+	modify NONE #4 #-1 #-1
+	modify NONE #4 #-1 #0
+	modify NONE #4 #-1 #1
+	modify NONE #4 #-1 #2
+	modify NONE #4 #-1 #3
+	modify NONE #4 #-1 #4
+	modify NONE #4 #-1 #5
+	modify NONE #4 #-1 #6
+	
+	modify NONE #5 #-1 #-5
+	modify NONE #5 #-1 #-4
+	modify NONE #5 #-1 #-3
+	modify NONE #5 #-1 #-2
+	modify NONE #5 #-1 #-1
+	modify NONE #5 #-1 #0
+	modify NONE #5 #-1 #1
+	modify NONE #5 #-1 #2
+	modify NONE #5 #-1 #3
+	modify NONE #5 #-1 #4
+	modify NONE #5 #-1 #5
+	modify NONE #5 #-1 #6
+
+	modify NONE #6 #-1 #-5
+	modify NONE #6 #-1 #-4
+	modify NONE #6 #-1 #-3
+	modify NONE #6 #-1 #-2
+	modify NONE #6 #-1 #-1
+	modify NONE #6 #-1 #0
+	modify NONE #6 #-1 #1
+	modify NONE #6 #-1 #2
+	modify NONE #6 #-1 #3
+	modify NONE #6 #-1 #4
+	modify NONE #6 #-1 #5
+	modify NONE #6 #-1 #6
+}

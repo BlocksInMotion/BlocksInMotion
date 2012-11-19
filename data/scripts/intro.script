@@ -1,0 +1,42 @@
+
+bridge_start {
+	trigger #1 #-1 #0
+}
+
+bridge_cascade {
+	modify LIGHT #0 #0 #0
+	play_sound WOOSH #0 #0 #0
+}
+
+bridge_unset {
+	modify ACID #0 #0 #0
+	trigger #1 #0 #0
+}
+
+spawn_ai {
+	modify SPAWNER 12 0 27
+	modify SPAWNER 18 0 27
+	play_sound AI_ANGRY 12 0 27
+	
+	toggle INDESTRUCTIBLE METAL #3 #-1 #-5
+	toggle INDESTRUCTIBLE METAL #3 #-1 #-3
+	toggle INDESTRUCTIBLE METAL #3 #-1 #-1
+	
+	toggle INDESTRUCTIBLE METAL #3 #0 #-4
+	toggle INDESTRUCTIBLE METAL #3 #0 #-2
+	
+	toggle INDESTRUCTIBLE METAL #3 #1 #-5
+	toggle INDESTRUCTIBLE METAL #3 #1 #-3
+	toggle INDESTRUCTIBLE METAL #3 #1 #-1
+	
+	toggle INDESTRUCTIBLE METAL #3 #2 #-4
+	toggle INDESTRUCTIBLE METAL #3 #2 #-2
+	
+	toggle INDESTRUCTIBLE METAL #3 #3 #-5
+	toggle INDESTRUCTIBLE METAL #3 #3 #-3
+	toggle INDESTRUCTIBLE METAL #3 #3 #-1
+	
+	toggle INDESTRUCTIBLE METAL #3 #4 #-4
+	toggle INDESTRUCTIBLE METAL #3 #4 #-2
+}
+

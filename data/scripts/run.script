@@ -1,0 +1,134 @@
+
+_dummy_activate {
+	// nothing
+}
+
+drop_neg {
+	make_dynamic #-2 #-1 #-2
+	make_dynamic #-1 #-1 #-1
+	make_dynamic #-2 #-1 #-1
+	make_dynamic #-1 #-1 #-2
+	play_sound SPRING #-1 #-1 #-1
+}
+
+drop_pos {
+	make_dynamic #2 #-1 #2
+	make_dynamic #1 #-1 #1
+	make_dynamic #2 #-1 #1
+	make_dynamic #1 #-1 #2
+	play_sound SPRING #1 #-1 #1
+}
+
+l1_door_0 {
+	modify NONE 11 47 9
+	modify NONE 10 47 10
+	modify NONE 9 47 11
+	play_sound WOOSH 11 47 9
+}
+l1_door_0_untrigger {
+	modify INDESTRUCTIBLE 11 47 9
+	modify INDESTRUCTIBLE 10 47 10
+	modify INDESTRUCTIBLE 9 47 11
+	play_sound WOOSH 11 47 9
+}
+l1_door_1 {
+	modify NONE 11 46 9
+	modify NONE 10 46 10
+	modify NONE 9 46 11
+	modify NONE 11 48 9
+	modify NONE 10 48 10
+	modify NONE 9 48 11
+	play_sound WOOSH 11 46 9
+}
+
+l2_spawn_l3 {
+	call drop_neg
+	modify SPAWNER 1 28 1
+	modify SPAWNER 2 28 1
+	modify SPAWNER 1 28 2
+	modify SPAWNER 2 28 2
+	play_sound AI_ANGRY #0 #-10 #0
+}
+
+l3_door_0 {
+	make_dynamic 9 35 14
+	modify NONE 3 23 13
+	modify NONE 3 24 13
+	modify NONE 3 25 13
+	modify NONE 3 23 14
+	modify NONE 3 24 14
+	modify NONE 3 25 14
+	play_sound WOOSH 3 23 13
+}
+
+l3_door_1 {
+	make_dynamic 9 35 14
+	modify NONE 13 23 3
+	modify NONE 13 24 3
+	modify NONE 13 25 3
+	modify NONE 14 23 3
+	modify NONE 14 24 3
+	modify NONE 14 25 3
+	play_sound WOOSH 13 23 3
+}
+
+l3_final_door {
+	modify NONE 7 23 8
+	modify NONE 7 24 8
+	modify NONE 7 25 8
+	play_sound WOOSH 7 23 8
+}
+
+l4_trigger_z {
+	toggle LIGHT INDESTRUCTIBLE #-1 #2 #0
+	toggle INDESTRUCTIBLE LIGHT #-1 #2 #2
+	toggle INDESTRUCTIBLE LIGHT #-1 #2 #-2
+	play_sound BUTTON #0 #0 #0
+}
+l4_trigger_z_mid {
+	toggle LIGHT INDESTRUCTIBLE #-1 #2 #0
+	toggle INDESTRUCTIBLE LIGHT #-1 #2 #2
+	toggle INDESTRUCTIBLE LIGHT #2 #2 #-3
+	play_sound BUTTON #0 #0 #0
+}
+l4_trigger_z_end {
+	toggle LIGHT INDESTRUCTIBLE #-1 #2 #0
+	toggle INDESTRUCTIBLE LIGHT #-1 #2 #-2
+	play_sound BUTTON #0 #0 #0
+}
+
+l4_trigger_x {
+	toggle LIGHT INDESTRUCTIBLE #0 #2 #-1
+	toggle INDESTRUCTIBLE LIGHT #2 #2 #-1
+	toggle INDESTRUCTIBLE LIGHT #-2 #2 #-1
+	play_sound BUTTON #0 #0 #0
+}
+l4_trigger_x_mid {
+	toggle LIGHT INDESTRUCTIBLE #0 #2 #-1
+	toggle INDESTRUCTIBLE LIGHT #2 #2 #-1
+	toggle INDESTRUCTIBLE LIGHT #-3 #2 #2
+	play_sound BUTTON #0 #0 #0
+}
+l4_trigger_x_end {
+	toggle LIGHT INDESTRUCTIBLE #0 #2 #-1
+	toggle INDESTRUCTIBLE LIGHT #-2 #2 #-1
+	play_sound BUTTON #0 #0 #0
+}
+
+l4_door {
+	modify NONE 1 12 1
+	modify NONE 2 12 1
+	modify NONE 1 12 2
+	modify NONE 2 12 2
+	play_sound WOOSH 1 12 1
+}
+
+l5_door {
+	modify NONE 13 7 12
+	modify NONE 13 8 12
+	modify NONE 13 9 12
+	modify NONE 14 7 12
+	modify NONE 14 8 12
+	modify NONE 14 9 12
+	play_sound WOOSH 13 7 12
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a2e_material version="2" object_count="8">
+	<materials>
+		<!-- NONE/DUMMY -->
+		<material id="0" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/black_1024.png" />
+			<texture type="specular" file="textures/black_1024.png" />
+			<texture type="reflectance" file="textures/black_1024.png" />
+			<texture type="normal" file="textures/black_1024.png" />
+			<texture type="height" file="textures/black_1024.png" />
+			<texture type="anisotropic" file="textures/black_1024.png" />
+		</material>
+		<!-- INDESTRUCTIBLE -->
+		<material id="1" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/indestructible_1024.png" />
+			<texture type="specular" file="textures/indestructible_specular_1024.png" />
+			<texture type="reflectance" file="textures/indestructible_specular_1024.png" />
+			<texture type="normal" file="textures/indestructible_normal_1024.png" />
+			<texture type="height" file="textures/indestructible_height_1024.png" />
+			<texture type="anisotropic" file="textures/indestructible_anisotropic_1024.png" />
+		</material>
+		<!-- METAL -->
+		<material id="2" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/metal_1024.png" />
+			<texture type="specular" file="textures/metal_specular_1024.png" />
+			<texture type="reflectance" file="textures/metal_specular_1024.png" />
+			<texture type="normal" file="textures/normal_placeholder_1024.png" />
+			<texture type="height" file="textures/height_placeholder_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_low_1024.png" />
+		</material>
+		<!-- MAGNET -->
+		<material id="3" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/magnet_1024.png" />
+			<texture type="specular" file="textures/magnet_specular_1024.png" />
+			<texture type="reflectance" file="textures/magnet_specular_1024.png" />
+			<texture type="normal" file="textures/magnet_normal_1024.png" />
+			<texture type="height" file="textures/magnet_height_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_low_1024.png" />
+		</material>
+		<!-- LIGHT -->
+		<material id="4" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/light_1024.png" />
+			<texture type="specular" file="textures/specular_placeholder_1024.png" />
+			<texture type="reflectance" file="textures/reflectance_placeholder_1024.png" />
+			<texture type="normal" file="textures/light_normal_1024.png" />
+			<texture type="height" file="textures/light_height_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_none_1024.png" />
+		</material>
+		<!-- ACID -->
+		<material id="5" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/acid_1024.png" />
+			<texture type="specular" file="textures/white_1024.png" />
+			<texture type="reflectance" file="textures/reflectance_placeholder_1024.png" />
+			<texture type="normal" file="textures/acid_normal_1024.png" />
+			<texture type="height" file="textures/acid_height_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_high_1024.png" />
+		</material>
+		<!-- SPRING -->
+		<material id="6" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/spring_1024.png" />
+			<texture type="specular" file="textures/spring_specular_1024.png" />
+			<texture type="reflectance" file="textures/spring_specular_1024.png" />
+			<texture type="normal" file="textures/spring_normal_1024.png" />
+			<texture type="height" file="textures/spring_height_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_low_1024.png" />
+		</material>
+		<!-- SPAWNER -->
+		<material id="7" type="parallax" model="ashikhmin_shirley">
+			<texture type="diffuse" file="textures/spawner_1024.png" />
+			<texture type="specular" file="textures/spawner_specular_1024.png" />
+			<texture type="reflectance" file="textures/spawner_specular_1024.png" />
+			<texture type="normal" file="textures/spawner_normal_1024.png" />
+			<texture type="height" file="textures/spawner_height_1024.png" />
+			<texture type="anisotropic" file="textures/anisotropic_low_1024.png" />
+		</material>
+	</materials>
+	<material_mapping>
+		<object material_id="0" />
+		<object material_id="1" />
+		<object material_id="2" />
+		<object material_id="3" />
+		<object material_id="4" />
+		<object material_id="5" />
+		<object material_id="6" />
+		<object material_id="7" />
+	</material_mapping>
+</a2e_material>

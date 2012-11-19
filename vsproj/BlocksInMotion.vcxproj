@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ai\ai_entity.h" />
+    <ClInclude Include="..\src\audio\audio_3d.h" />
+    <ClInclude Include="..\src\audio\audio_background.h" />
+    <ClInclude Include="..\src\audio\audio_controller.h" />
+    <ClInclude Include="..\src\audio\audio_headers.h" />
+    <ClInclude Include="..\src\audio\audio_source.h" />
+    <ClInclude Include="..\src\audio\audio_store.h" />
+    <ClInclude Include="..\src\editor\editor.h" />
+    <ClInclude Include="..\src\game\game.h" />
+    <ClInclude Include="..\src\game\game_base.h" />
+    <ClInclude Include="..\src\game\save.h" />
+    <ClInclude Include="..\src\main.h" />
+    <ClInclude Include="..\src\map\block_textures.h" />
+    <ClInclude Include="..\src\map\builtin_models.h" />
+    <ClInclude Include="..\src\map\map_loader.h" />
+    <ClInclude Include="..\src\map\map_renderer.h" />
+    <ClInclude Include="..\src\map\map_storage.h" />
+    <ClInclude Include="..\src\map\sb_map.h" />
+    <ClInclude Include="..\src\physics\physics_controller.h" />
+    <ClInclude Include="..\src\physics\physics_entity.h" />
+    <ClInclude Include="..\src\physics\physics_player.h" />
+    <ClInclude Include="..\src\physics\rigid_body.h" />
+    <ClInclude Include="..\src\physics\soft_body.h" />
+    <ClInclude Include="..\src\physics\weight_slider.h" />
+    <ClInclude Include="..\src\sb_conf.h" />
+    <ClInclude Include="..\src\sb_debug.h" />
+    <ClInclude Include="..\src\sb_events.h" />
+    <ClInclude Include="..\src\sb_global.h" />
+    <ClInclude Include="..\src\scripting\script.h" />
+    <ClInclude Include="..\src\scripting\script_handler.h" />
+    <ClInclude Include="..\src\ui\menu_ui.h" />
+    <ClInclude Include="..\src\ui\sb_console.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ai\ai_entity.cpp" />
+    <ClCompile Include="..\src\audio\audio_3d.cpp" />
+    <ClCompile Include="..\src\audio\audio_background.cpp" />
+    <ClCompile Include="..\src\audio\audio_controller.cpp" />
+    <ClCompile Include="..\src\audio\audio_headers.cpp" />
+    <ClCompile Include="..\src\audio\audio_source.cpp" />
+    <ClCompile Include="..\src\audio\audio_store.cpp" />
+    <ClCompile Include="..\src\editor\editor.cpp" />
+    <ClCompile Include="..\src\editor\editor_ui.cpp" />
+    <ClCompile Include="..\src\game\game.cpp" />
+    <ClCompile Include="..\src\game\game_base.cpp" />
+    <ClCompile Include="..\src\game\save.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\map\block_textures.cpp" />
+    <ClCompile Include="..\src\map\builtin_models.cpp" />
+    <ClCompile Include="..\src\map\map_loader.cpp" />
+    <ClCompile Include="..\src\map\map_renderer.cpp" />
+    <ClCompile Include="..\src\map\map_storage.cpp" />
+    <ClCompile Include="..\src\map\sb_map.cpp" />
+    <ClCompile Include="..\src\physics\physics_controller.cpp" />
+    <ClCompile Include="..\src\physics\physics_entity.cpp" />
+    <ClCompile Include="..\src\physics\physics_player.cpp" />
+    <ClCompile Include="..\src\physics\rigid_body.cpp" />
+    <ClCompile Include="..\src\physics\soft_body.cpp" />
+    <ClCompile Include="..\src\physics\weight_slider.cpp" />
+    <ClCompile Include="..\src\sb_conf.cpp" />
+    <ClCompile Include="..\src\sb_debug.cpp" />
+    <ClCompile Include="..\src\sb_global.cpp" />
+    <ClCompile Include="..\src\scripting\script.cpp" />
+    <ClCompile Include="..\src\scripting\script_handler.cpp" />
+    <ClCompile Include="..\src\ui\menu_ui.cpp" />
+    <ClCompile Include="..\src\ui\sb_console.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{406779AD-98BE-40BB-BBE2-DEF847B7546F}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>make.bat $(ProjectDir) debug64 "cd .."</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)..\bin\BlocksInMotiond.exe</NMakeOutput>
+    <NMakeCleanCommandLine>
+    </NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make.bat $(ProjectDir) debug64 "cd .."</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32_;_WIN32;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)\..\src;$(MINGW_ROOT)\msys\include\a2elight;$(MINGW_ROOT)\msys\include\bullet;$(MINGW_ROOT)\msys\include\freetype2;$(MINGW_ROOT)\msys\include\SDL2;$(MINGW_ROOT)\msys\include\libxml2;$(MINGW_ROOT)\msys\include\libpng15;$(MINGW_ROOT)\include\c++\4.7.0</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>make.bat $(ProjectDir) release64 "cd .."</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)..\bin\BlocksInMotion.exe</NMakeOutput>
+    <NMakeCleanCommandLine>
+    </NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make.bat $(ProjectDir) release64 "cd .."</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32_;_WIN32;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)\..\src;$(MINGW_ROOT)\msys\include\a2elight;$(MINGW_ROOT)\msys\include\bullet;$(MINGW_ROOT)\msys\include\freetype2;$(MINGW_ROOT)\msys\include\SDL2;$(MINGW_ROOT)\msys\include\libxml2;$(MINGW_ROOT)\msys\include\libpng15;$(MINGW_ROOT)\include\c++\4.7.0</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

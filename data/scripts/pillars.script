@@ -1,0 +1,114 @@
+
+map_start {
+	// dynamic block that will trigger the weight trigger after
+	// all 5 indestructible blocks have been removed by the player
+	// -> block falls onto the trigger at the end
+	make_dynamic 7 8 70
+	make_dynamic 7 9 70
+}
+
+trigger_link {
+	activate door NEXT
+}
+
+t1 {
+	modify NONE 7 7 70
+	modify NONE 8 7 70
+	modify NONE 7 7 71
+	modify NONE 8 7 71
+	
+	make_dynamic 1 1 27
+	make_dynamic 1 2 27
+	make_dynamic 1 3 27
+	make_dynamic 1 4 27
+	make_dynamic 1 5 27
+	make_dynamic 1 6 27
+	make_dynamic 2 1 27
+	make_dynamic 2 2 27
+	make_dynamic 2 3 27
+	make_dynamic 2 4 27
+	make_dynamic 2 5 27
+	make_dynamic 2 6 27
+	
+	make_dynamic 4 1 27
+	make_dynamic 4 2 27
+	make_dynamic 4 3 27
+	make_dynamic 4 4 27
+	make_dynamic 4 5 27
+	make_dynamic 4 6 27
+	make_dynamic 5 1 27
+	make_dynamic 5 2 27
+	make_dynamic 5 3 27
+	make_dynamic 5 4 27
+	make_dynamic 5 5 27
+	make_dynamic 5 6 27
+	
+	make_dynamic 7 1 27
+	make_dynamic 7 2 27
+	make_dynamic 7 3 27
+	make_dynamic 7 4 27
+	make_dynamic 7 5 27
+	make_dynamic 7 6 27
+	make_dynamic 8 1 27
+	make_dynamic 8 2 27
+	make_dynamic 8 3 27
+	make_dynamic 8 4 27
+	make_dynamic 8 5 27
+	make_dynamic 8 6 27
+	
+	make_dynamic 10 1 27
+	make_dynamic 10 2 27
+	make_dynamic 10 3 27
+	make_dynamic 10 4 27
+	make_dynamic 10 5 27
+	make_dynamic 10 6 27
+	make_dynamic 11 1 27
+	make_dynamic 11 2 27
+	make_dynamic 11 3 27
+	make_dynamic 11 4 27
+	make_dynamic 11 5 27
+	make_dynamic 11 6 27
+	
+	make_dynamic 13 1 27
+	make_dynamic 13 2 27
+	make_dynamic 13 3 27
+	make_dynamic 13 4 27
+	make_dynamic 13 5 27
+	make_dynamic 13 6 27
+	make_dynamic 14 1 27
+	make_dynamic 14 2 27
+	make_dynamic 14 3 27
+	make_dynamic 14 4 27
+	make_dynamic 14 5 27
+	make_dynamic 14 6 27
+}
+t2 {
+	modify NONE 7 6 70
+	modify NONE 8 6 70
+	modify NONE 7 6 71
+	modify NONE 8 6 71
+}
+t3 {
+	modify NONE 7 5 70
+	modify NONE 8 5 70
+	modify NONE 7 5 71
+	modify NONE 8 5 71
+}
+t4 {
+	modify NONE 7 4 70
+	modify NONE 8 4 70
+	modify NONE 7 4 71
+	modify NONE 8 4 71
+}
+t5 {
+	modify NONE 7 3 70
+	modify NONE 8 3 70
+	modify NONE 7 3 71
+	modify NONE 8 3 71
+}
+t6 {
+	modify NONE 7 2 70
+	modify NONE 8 2 70
+	modify NONE 7 2 71
+	modify NONE 8 2 71
+}

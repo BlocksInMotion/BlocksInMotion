@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<a2e_shader version="2">
+	<vertex_shader>
+uniform mat4 mvm;
+uniform mat4 mvpm;
+
+#define MAX_SPRITES (65536/16)
+layout(std140) uniform sprites {
+	// xyz: position, w: texture layer
+	vec4 position[MAX_SPRITES];
+} sprites_data;
+
+in vec2 in_vertex;
+
+out vertex {
+	vec2 tex_coord;
+	flat float layer;
+} out_vertex;
+
+void main() {
+	vec4 position = sprites_data.position[gl_InstanceID];
+	out_vertex.tex_coord = vec2(in_vertex.y + 0.5, -in_vertex.x + 0.5);
+	out_vertex.layer = position.w;
+	
+	//
+	const vec2 size = vec2(0.8);
+	vec2 vsign = in_vertex * size;
+	vec3 right = vec3(mvm[0][0], mvm[1][0], mvm[2][0]);
+	vec3 up = vec3(mvm[0][1], mvm[1][1], mvm[2][1]);
+	gl_Position = mvpm * vec4(position.xyz + (vsign.y * right + vsign.x * up), 1.0);
+}
+	</vertex_shader>
+
+	<fragment_shader>
+out vec4 frag_color;
+
+uniform sampler2DArray object_textures;
+
+in vertex {
+	vec2 tex_coord;
+	flat float layer;
+} in_vertex;
+
+void main() {
+	vec4 color = texture(object_textures, vec3(in_vertex.tex_coord.x, in_vertex.tex_coord.y, in_vertex.layer));
+	frag_color = vec4(color.rgb * color.a, color.a);
+}
+	</fragment_shader>
+
+</a2e_shader>

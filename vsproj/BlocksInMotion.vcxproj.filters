@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{c2dd0510-d076-4dad-bb69-b8eedac7b9ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{521f8b27-3df2-45e8-bf6e-8c2a52c05ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{0666e2ae-db09-4686-829a-f26d9ece8b45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{da9ea2e4-d020-4148-bc10-9d4e036ed004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{bbe0419b-82ad-4ac2-8fd8-ed0d6b96b430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{6674929c-c242-482a-81c5-69284dc6999b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{dfa55a58-a8e1-4044-8521-14fa21f9f6dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{dbeb7172-113c-41c0-998f-17b1d63a6495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripting">
+      <UniqueIdentifier>{83862f84-bd5d-48f2-b0ac-a3f4c98d7a3a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\main.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sb_conf.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sb_events.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sb_global.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\editor\editor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\block_textures.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\builtin_models.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\map_loader.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\map_renderer.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\sb_map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ui\sb_console.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\physics_controller.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\physics_player.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\rigid_body.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\soft_body.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_3d.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_background.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_controller.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_source.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ai\ai_entity.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_store.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\physics_entity.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\game_base.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\audio\audio_headers.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sb_debug.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\weight_slider.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\map\map_storage.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ui\menu_ui.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scripting\script.h">
+      <Filter>Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scripting\script_handler.h">
+      <Filter>Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\save.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sb_conf.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sb_global.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\editor\editor.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\block_textures.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\builtin_models.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\map_loader.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\map_renderer.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\sb_map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\sb_console.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\physics_controller.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\physics_player.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\rigid_body.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\soft_body.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_3d.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_background.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_controller.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_source.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ai\ai_entity.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_store.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\physics_entity.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\game_base.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\audio\audio_headers.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sb_debug.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\physics\weight_slider.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\editor\editor_ui.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\map\map_storage.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\menu_ui.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scripting\script.cpp">
+      <Filter>Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scripting\script_handler.cpp">
+      <Filter>Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\save.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+particle_compute 6 time_passed 0 0 0 living_time 0 0 0 particle_count 0 0 0 gravity 0 0 0 pos_time_buffer 1 1 0 dir_buffer 1 1 0

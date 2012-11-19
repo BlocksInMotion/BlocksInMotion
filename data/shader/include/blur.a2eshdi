@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<a2e_shader version="2">
+	<vertex_shader>
+in vec2 in_vertex;
+in vec2 in_tex_coord;
+out vec2 tex_coord;
+
+void main() {
+	gl_Position = vec4(in_vertex.x, in_vertex.y, 0.0, 1.0);
+	tex_coord = in_tex_coord;
+}
+	</vertex_shader>
+</a2e_shader>

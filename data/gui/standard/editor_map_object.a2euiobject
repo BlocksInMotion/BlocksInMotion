@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a2e_ui_object version="1">
+	<state type="normal">
+		<rounded_rectangle start="5%" end="95%" radius="64.0" corners="all" style="gradient" gradient="vertical" stops="0,1" colors="1.0,0.3,0.3,0.8;0.8,0.0,0.0,0.8"/>
+		<rectangle start="5%" end="95%" style="texture" name="object_texture"/>
+	</state>
+	<state type="active">
+		<rounded_rectangle start="5%" end="95%" radius="64.0" corners="all" style="gradient" gradient="vertical" stops="0,1" colors="0.5,0.5,1.0,0.8;0.3,0.3,1.0,0.8"/>
+		<rectangle start="5%" end="95%" style="texture" name="object_texture"/>
+	</state>
+</a2e_ui_object>

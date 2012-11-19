@@ -1,0 +1,101 @@
+<!ELEMENT config (#PCDATA | screen | gui | projection | input | sleep | graphic | graphic_device | inferred | opencl | bim)*>
+<!ELEMENT screen (#PCDATA)*>
+<!ATTLIST screen
+	width CDATA #REQUIRED
+	height CDATA #REQUIRED
+	fullscreen CDATA #REQUIRED
+	vsync CDATA #REQUIRED
+	stereo CDATA #REQUIRED
+>
+<!ELEMENT gui (#PCDATA)*>
+<!ATTLIST gui
+	dpi CDATA #REQUIRED
+	anti_aliasing CDATA #REQUIRED
+>
+<!ELEMENT projection (#PCDATA)*>
+<!ATTLIST projection
+	fov CDATA #REQUIRED
+	near CDATA #REQUIRED
+	far CDATA #REQUIRED
+>
+<!ELEMENT input (#PCDATA)*>
+<!ATTLIST input
+	key_repeat CDATA #REQUIRED
+	ldouble_click CDATA #REQUIRED
+	mdouble_click CDATA #REQUIRED
+	rdouble_click CDATA #REQUIRED
+>
+<!ELEMENT sleep (#PCDATA)*>
+<!ATTLIST sleep
+	time CDATA #REQUIRED
+>
+<!ELEMENT graphic (#PCDATA)*>
+<!ATTLIST graphic
+	filtering CDATA #REQUIRED
+	anisotropic CDATA #REQUIRED
+	anti_aliasing CDATA #REQUIRED
+>
+<!ELEMENT graphic_device (#PCDATA)*>
+<!ATTLIST graphic_device
+	disabled_extensions CDATA #REQUIRED
+	force_device CDATA #REQUIRED
+	force_vendor CDATA #REQUIRED
+>
+<!ELEMENT inferred (#PCDATA)*>
+<!ATTLIST inferred
+	upscaling CDATA #REQUIRED
+	geometry_light_scaling CDATA #REQUIRED
+>
+<!ELEMENT opencl (#PCDATA)*>
+<!ATTLIST opencl
+	platform CDATA #REQUIRED
+	clear_cache CDATA #REQUIRED
+	restrict CDATA #REQUIRED
+>
+<!ELEMENT debug (#PCDATA)*>
+<!ATTLIST debug
+	free_cam CDATA #REQUIRED
+	player_gfx CDATA #REQUIRED
+>
+<!ELEMENT bim (#PCDATA | gfx | forcefield | volume | menu | controls)*>
+<!ELEMENT gfx (#PCDATA | texture | particles)*>
+<!ELEMENT texture (#PCDATA)*>
+<!ATTLIST texture
+	quality CDATA #REQUIRED
+>
+<!ELEMENT particles (#PCDATA)*>
+<!ATTLIST particles
+        enabled CDATA #REQUIRED
+>
+<!ELEMENT volume (#PCDATA)*>
+<!ATTLIST volume
+	music CDATA #REQUIRED
+	sound CDATA #REQUIRED
+>
+<!ELEMENT forcefield (#PCDATA)*>
+<!ATTLIST forcefield
+	grab_color CDATA #REQUIRED
+	push_color CDATA #REQUIRED
+	swap_color CDATA #REQUIRED
+  background_selecting CDATA #REQUIRED
+  background_selected CDATA #REQUIRED
+  tex_interpolation CDATA #REQUIRED
+  line_interval CDATA #REQUIRED
+  time_denominator CDATA #REQUIRED
+>
+<!ELEMENT menu (#PCDATA)*>
+<!ATTLIST menu
+	disabled CDATA #REQUIRED
+>
+<!ELEMENT controls (#PCDATA)*>
+<!ATTLIST controls
+	pg_pull CDATA #REQUIRED
+	pg_push CDATA #REQUIRED
+	pg_gravity CDATA #REQUIRED
+	forwards CDATA #REQUIRED
+	backwards CDATA #REQUIRED
+	left CDATA #REQUIRED
+	right CDATA #REQUIRED
+	jump CDATA #REQUIRED
+	console CDATA #REQUIRED
+>

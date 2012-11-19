@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<a2e_shader version="2">
+	<vertex_shader>
+in vec3 in_vertex;
+	</vertex_shader>
+
+	<fragment_shader>
+out vec4 frag_color;
+	</fragment_shader>
+</a2e_shader>

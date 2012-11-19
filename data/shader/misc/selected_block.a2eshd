@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<!--
+
+	functions: simplex and simplex_noise:
+	http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf
+	http://staffwww.itn.liu.se/~stegu/simplexnoise/GLSL-noise.zip/GLSLnoise.frag
+
+	Copyright (C) 2004, 2005, 2010 by Stefan Gustavson. All rights reserved.
+	This code is licensed to you under the terms of the MIT license:
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+
+-->
+<a2e_shader version="2">
+	<includes>global</includes>
+	<options>textured colored</options>
+
+	<vertex_shader>
+	in vec3 normal;
+	in vec3 binormal;
+	in vec3 tangent;
+	in vec2 texture_coord;
+
+	uniform mat4 model_view_projection_matrix;
+	<option match="textured">
+	uniform mat4 model_matrix;
+	uniform vec3 camera_position;
+	</option>
+
+	out vs_struct
+	{
+		vec3 pos;
+		<option match="textured">
+		<condition type="NEQUAL" value="ATI">
+		centroid out vec2 tex_coord;
+		</condition>
+		<condition type="EQUAL" value="ATI">
+		centroid vec2 tex_coord;
+		</condition>
+		vec3 view;
+		</option>
+	} vs_output;
+
+	void main()
+	{
+		gl_Position = model_view_projection_matrix * vec4(in_vertex, 1.0);
+		vs_output.pos = gl_Position.xyz;
+		
+		<option match="textured">
+		vs_output.tex_coord = texture_coord;
+
+		// transform normal, binormal and tangent
+		vec3 normal = normalize((model_matrix * vec4(normal, 0.0)).xyz);
+		vec3 binormal = normalize((model_matrix * vec4(binormal, 0.0)).xyz);
+		vec3 tangent = normalize((model_matrix * vec4(tangent, 0.0)).xyz);
+		
+		vs_output.view = normalize((camera_position - vs_output.pos) * mat3(tangent, binormal, normal));
+		</option>
+	}
+	</vertex_shader>
+	
+	<fragment_shader>
+	in vs_struct
+	{
+		vec3 pos;
+		<option match="textured">
+		<condition type="NEQUAL" value="ATI">
+		centroid in vec2 tex_coord;
+		</condition>
+		<condition type="EQUAL" value="ATI">
+		centroid vec2 tex_coord;
+		</condition>
+		vec3 view;
+		</option>
+	} ps_input;
+
+	
+	// basic input for noise
+	uniform sampler2D       noise_permutation;
+	uniform sampler2D       noise_gradient;
+	uniform float           time;
+	
+	<option match="textured">
+	uniform sampler2DArray  diffuse_textures;
+	uniform sampler2DArray  height_textures;
+	uniform float           block_mat;
+	</option>
+	
+	uniform vec4           forcefield_foreground;
+	uniform vec4           forcefield_background;
+	uniform vec2           forcefield_line_int; // threshold interval (min = [0], max = [1])
+	uniform float          forcefield_color_inter;
+
+	void simplex( const in vec4 P, out vec4 offset1, out vec4 offset2, out vec4 offset3 )
+	{
+		vec4 offset0;
+
+		vec3 isX = step( P.yzw, P.xxx );
+		offset0.x = dot( isX, vec3( 1.0 ) );
+		offset0.yzw = 1.0 - isX;
+
+		vec2 isY = step( P.zw, P.yy );
+		offset0.y += dot( isY, vec2( 1.0 ) );
+		offset0.zw += 1.0 - isY;
+
+		float isZ = step( P.w, P.z );
+		offset0.z += isZ;
+		offset0.w += 1.0 - isZ;
+
+		offset3 = clamp(   offset0, 0.0, 1.0 );
+		offset2 = clamp( --offset0, 0.0, 1.0 );
+		offset1 = clamp( --offset0, 0.0, 1.0 );
+	}
+
+    float simplex_noise(const in vec4 P)
+	{
+		const float F4 = 0.309016994375;
+		const float G4 = 0.138196601125;
+		const float ONE = 0.00390625;
+		const float ONEHALF = 0.001953125;
+
+		float s = (P.x + P.y + P.z + P.w) * F4;
+		vec4 Pi = floor(P + s);
+		float t = (Pi.x + Pi.y + Pi.z + Pi.w) * G4;
+		vec4 P0 = Pi - t;
+		Pi = Pi * ONE + ONEHALF;
+
+		vec4 Pf0 = P - P0;
+
+		vec4 o1; vec4 o2; vec4 o3;
+		simplex(Pf0, o1, o2, o3);
+
+		float perm0xy = texture(noise_permutation, Pi.xy).a;
+		float perm0zw = texture(noise_permutation, Pi.zw).a;
+		vec4  grad0 = texture(noise_gradient, vec2(perm0xy, perm0zw)).rgba * 4.0 - 1.0;
+		float t0 = 0.6 - dot(Pf0, Pf0);
+		float n0;
+		if (t0 < 0.0) {
+			n0 = 0.0;
+		}
+		else {
+			t0 *= t0;
+			n0 = t0 * t0 * dot(grad0, Pf0);
+		}
+
+		vec4 Pf1 = Pf0 - o1 + G4;
+		o1 = o1 * ONE;
+		float perm1xy = texture(noise_permutation, Pi.xy + o1.xy).a;
+		float perm1zw = texture(noise_permutation, Pi.zw + o1.zw).a;
+		vec4  grad1 = texture(noise_gradient, vec2(perm1xy, perm1zw)).rgba * 4.0 - 1.0;
+		float t1 = 0.6 - dot(Pf1, Pf1);
+		float n1;
+		if (t1 < 0.0) {
+			n1 = 0.0;
+		}
+		else {
+			t1 *= t1;
+			n1 = t1 * t1 * dot(grad1, Pf1);
+		}
+
+		vec4 Pf2 = Pf0 - o2 + 2.0 * G4;
+		o2 = o2 * ONE;
+		float perm2xy = texture(noise_permutation, Pi.xy + o2.xy).a;
+		float perm2zw = texture(noise_permutation, Pi.zw + o2.zw).a;
+		vec4  grad2 = texture(noise_gradient, vec2(perm2xy, perm2zw)).rgba * 4.0 - 1.0;
+		float t2 = 0.6 - dot(Pf2, Pf2);
+		float n2;
+		if (t2 < 0.0) {
+			n2 = 0.0;
+		}
+		else {
+			t2 *= t2;
+			n2 = t2 * t2 * dot(grad2, Pf2);
+		}
+
+		vec4 Pf3 = Pf0 - o3 + 3.0 * G4;
+		o3 = o3 * ONE;
+		float perm3xy = texture(noise_permutation, Pi.xy + o3.xy).a;
+		float perm3zw = texture(noise_permutation, Pi.zw + o3.zw).a;
+		vec4  grad3 = texture(noise_gradient, vec2(perm3xy, perm3zw)).rgba * 4.0 - 1.0;
+		float t3 = 0.6 - dot(Pf3, Pf3);
+		float n3;
+		if (t3 < 0.0) {
+			n3 = 0.0;
+		}
+		else {
+			t3 *= t3;
+			n3 = t3 * t3 * dot(grad3, Pf3);
+		}
+
+		vec4 Pf4 = Pf0 - vec4(1.0-4.0*G4);
+		float perm4xy = texture(noise_permutation, Pi.xy + vec2(ONE, ONE)).a;
+		float perm4zw = texture(noise_permutation, Pi.zw + vec2(ONE, ONE)).a;
+		vec4  grad4 = texture(noise_gradient, vec2(perm4xy, perm4zw)).rgba * 4.0 - 1.0;
+		float t4 = 0.6 - dot(Pf4, Pf4);
+		float n4;
+		if(t4 < 0.0) {
+			n4 = 0.0;
+		}
+		else {
+			t4 *= t4;
+			n4 = t4 * t4 * dot(grad4, Pf4);
+		}
+
+		return 27.0 * (n0 + n1 + n2 + n3 + n4);
+	}
+  
+	float compute_turbulence( const vec4 source, const int iterations,
+							  const float lacunarity, const float gain )
+	{
+		vec4 val = source;
+		// http://en.wikipedia.org/wiki/Fractional_Brownian_motion
+		float result = 0.0;
+		float amplitude = 1.0;
+		float sum = 0.0;
+		for( int i = 0; i < iterations; ++i )
+		{
+			result = result + amplitude * abs( simplex_noise( val ) );
+			amplitude = amplitude * gain;
+			sum = sum + amplitude;
+			val = val * lacunarity;
+		}
+		return result / sum;
+	}
+	
+	void main()
+	{
+		<option match="textured">
+			// handle textures in this mode
+			const float p_factor = 0.03;
+			float h_offs = 0.0;
+			float w_offs = 0.0;
+			vec3 tex_coord = vec3( ps_input.tex_coord, block_mat - 1.0 );
+			
+			for(int i = 1; i < 4; i++)
+			{
+				h_offs += texture( height_textures, tex_coord ).x;
+				w_offs = p_factor * ( (2.0 / float(i) ) * h_offs - 1.0 );
+				tex_coord.xy = ps_input.tex_coord + w_offs * ps_input.view.xy;
+			}
+			
+			vec4 diff_color = texture( diffuse_textures, tex_coord );
+		</option>
+		
+		// basic idea: scale pos and time + add frequencies
+		<option match="textured">
+			// -> line has to be scaled with the help of scaled position and multiple iterations in order to generate a nice visualization
+			float forcfield_turbulence = compute_turbulence( vec4( ps_input.pos * 4.0, time ), 6, 2.3, 0.35 );
+		</option>
+		
+		// different scale values for colored variant
+		<option match="colored">
+			float forcfield_turbulence = compute_turbulence( vec4( ps_input.pos, time ), 8, 2.5, 0.4 );
+		</option>
+		
+		// => use absolute value and clamp to interval [0.0, 1.0]
+		forcfield_turbulence = clamp( abs( forcfield_turbulence ), 0.0, 1.0 );
+		
+		// compute field color according to the turbulence and both input colors
+        vec4 forcefield_color = mix( forcefield_foreground, forcefield_background, forcfield_turbulence );
+		// compute line color (keep alpha channel)
+        vec4 forcefield_line_color = vec4(1.0 - forcefield_foreground.xyz, forcefield_foreground.w );
+		
+		// fetch line interval
+		float line_min = forcefield_line_int.x;
+		float line_max = forcefield_line_int.y;
+		
+		// check whether we have hit a line (according to the specified interval in forcefield_line_int)
+        if( forcfield_turbulence >= line_min && forcfield_turbulence <= line_max )
+        {
+			// compute interval distance and scale it according to the specified interval
+			float scaled_distance = (forcfield_turbulence - line_min) / (line_max - line_min);
+			// use computed scaled distance to mix between line color and field color
+            forcefield_color = mix( forcefield_line_color, forcefield_color, scaled_distance );
+        }
+		
+		<option match="textured">
+			// interpolate between diffuse and computed forcefield color
+			frag_color = mix( forcefield_color, diff_color, forcefield_color_inter );
+		</option>
+		
+		<option match="colored">
+			frag_color = forcefield_color;
+		</option>	
+	}
+  </fragment_shader>
+	
+</a2e_shader>

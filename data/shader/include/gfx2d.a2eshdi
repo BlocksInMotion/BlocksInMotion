@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<a2e_shader version="2">
+	<fragment_shader>
+////
+uniform vec4 gradients[4]; // -> max gradient colors: 4
+uniform vec4 stops;
+uniform vec4 extent;
+////
+
+////
+// gradient computation
+vec4 compute_gradient(const in float interpolator) {
+	vec4 color = vec4(0.0);
+	// built-in step function can not be trusted -> branch instead ...
+	if(interpolator < stops.y) {
+		float interp = smoothstep(stops.x, stops.y, interpolator);
+		color += mix(gradients[0], gradients[1], interp);
+	}
+	else if(interpolator < stops.z) {
+		float interp = smoothstep(stops.y, stops.z, interpolator);
+		color += mix(gradients[1], gradients[2], interp);
+	}
+	else if(interpolator <= stops.w) {
+		float interp = smoothstep(stops.z, stops.w, interpolator);
+		color += mix(gradients[2], gradients[3], interp);
+	}
+	return color;
+}
+vec4 gradient_horizontal() {
+	return compute_gradient((gl_FragCoord.x - extent.x) / (extent.z - extent.x));
+}
+vec4 gradient_vertical() {
+	return compute_gradient((gl_FragCoord.y - extent.y) / (extent.w - extent.y));
+}
+vec4 gradient_diagonal_lr() {
+	vec2 interpolator_dir = (gl_FragCoord.xy - extent.xy) / (extent.zw - extent.xy);
+	return compute_gradient((interpolator_dir.x + interpolator_dir.y) * 0.5);
+}
+vec4 gradient_diagonal_rl() {
+	vec2 interpolator_dir = (gl_FragCoord.xy - extent.xy) / (extent.zw - extent.xy);
+	return compute_gradient(((1.0 - interpolator_dir.x) + interpolator_dir.y) * 0.5);
+}
+////
+	</fragment_shader>
+</a2e_shader>

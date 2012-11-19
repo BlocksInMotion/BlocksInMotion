@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a2e_material version="2" object_count="1">
+	<materials>
+		<material id="0" type="diffuse" model="ashikhmin_shirley">
+			<texture type="diffuse" file="push_button_off.png" />
+			<texture type="specular" file="push_button_specular.png" />
+			<texture type="reflectance" file="textures/reflectance_placeholder_1024.png" />
+			<const_anisotropic roughness="2000.0,2000.0" />
+		</material>
+	</materials>
+	<material_mapping>
+		<object material_id="0" />
+	</material_mapping>
+</a2e_material>

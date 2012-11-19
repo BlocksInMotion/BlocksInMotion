@@ -1,0 +1,1 @@
+compute_distances 3 pos_buffer 1 1 0 camera_pos 0 0 0 dist_buffer 1 1 0

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE a2e_shader PUBLIC "-//A2E//DTD a2e_shader 2.0//EN" "a2e_shader.dtd">
+<a2e_shader version="2">
+	<options>opaque alpha</options>
+
+	<fragment_shader>
+<option match="alpha">
+uniform float mask_id;
+uniform vec2 id;
+out vec4 frag_color_2;
+</option>
+
+vec2 encode_normal(const in vec3 in_normal) {
+	// encode normal (thank you martin mittring ;))
+	
+	vec3 normal = normalize(in_normal);
+	
+	// note: to work around general compiler optimizations/assumptions and floating point
+	// inaccuracies, add an epsilon to normal.xy (in case it's (0,0)) and the final result
+	// and also abs() the inner sqrt result (in case normal.z is slightly off)
+	const float epsilon = 0.00001;
+	vec2 enormal = normalize(normal.xy+vec2(epsilon)) * sqrt(abs(normal.z * 0.5 + 0.5));
+	return (enormal + vec2(epsilon));
+}
+
+void check_mask_id() {
+	<option match="alpha">
+	vec2 tiled_frag_coord = mod(floor(gl_FragCoord.xy), 2.0);
+	float cid = tiled_frag_coord.x + tiled_frag_coord.y * 2.0;
+	if(cid != mask_id) discard;
+	</option>
+}
+
+void write_gbuffer(const in vec3 normal, const in vec2 Nuv) {
+	frag_color = vec4(encode_normal(normal), Nuv);
+	
+	<option match="alpha">
+	frag_color_2 = vec4(id, 1.0, 1.0);
+	</option>
+}
+	</fragment_shader>
+</a2e_shader>

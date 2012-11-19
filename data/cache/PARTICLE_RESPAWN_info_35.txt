@@ -1,0 +1,1 @@
+particle_respawn 12 type 0 0 0 living_time 0 0 0 particle_count 0 0 0 velocity 0 0 0 angle 0 0 0 extents 0 0 0 direction 0 0 0 position_offset 0 0 0 seed 0 0 0 gravity 0 0 0 pos_time_buffer 1 1 0 dir_buffer 1 1 0

@@ -1,0 +1,9 @@
+open_door {
+	play_sound BUTTON #0 #0 #0
+	activate door NEXT
+}
+
+close_door {
+	play_sound BUTTON #0 #0 #0
+	deactivate door NEXT
+}

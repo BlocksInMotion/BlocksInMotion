@@ -1,0 +1,2 @@
+Due to various licences disallowing direct or standalone downloads, no audio files are being distributed with this repository.
+To get the audio files, please download the Blocks In Motion release (http://albion2.org/dl/BlocksInMotion.zip) and copy the audio files manually.
