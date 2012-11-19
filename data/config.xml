@@ -39,7 +39,7 @@
 	 opencl restrict options: if this is set to any of (or a list of) "CPU", "GPU" or "ACCELERATOR", only those kind/type of devices are used
 	-->
 	<graphic_device disabled_extensions="" force_device="" force_vendor=""/>
-	<opencl platform="0" clear_cache="1" restrict=""/>
+	<opencl platform="0" clear_cache="1" restrict="CPU"/>
 	
 	<!-- application specific settings -->
 	<bim>

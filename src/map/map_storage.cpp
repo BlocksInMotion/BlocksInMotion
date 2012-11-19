@@ -138,10 +138,12 @@ sb_map* map_storage::load(const string& filename) {
 			const long long int start_offset = file.get_current_offset();
 			loaders.at(type)(file, *level);
 			const long long int end_offset = file.get_current_offset();
+#if !defined(__APPLE__) || defined(A2E_DEBUG) // fails on 10.7's libc++, but works on 10.8
 			if((end_offset - start_offset) != data_length) { // check length
 				throw a2e_exception("invalid '"+SB_DATA_TYPE_TO_STR(type)+"' length: expected length: "+
 									uint2string(data_length)+", actual length: "+ssize_t2string(end_offset - start_offset));
 			}
+#endif
 		}
 		
 		// resolve waypoints (this must be done after all waypoints have been loaded, since there might be cyclic dependencies)

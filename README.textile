@@ -3,14 +3,24 @@
 Welcome to Blocks In Motion!
 
 Blocks In Motion is intended to be a mixture of Minecraft like block levels and Portal like physics and logic puzzles that you need to solve to reach the next level.
+The game includes 5 challenging levels for you to beat - and if this is not enough for you, a map-editor is also included ;)
 
-TODO: intro
+	Have fun and thank you for playing our game!
+	We would also love to hear your feedback (either CC us via mail or reply to the forum post)!
+
+
 
 Before you start, please read the following information:
 
-Software Requirements (or: "things that should be installed"):
-* on Windows: if OpenAL shouldn't be installed already, please do so: http://connect.creativelabs.com/openal/Downloads/oalinst.zip
-* on OS X: please install the latest XQuartz: http://xquartz.macosforge.org
+*Software Requirements and Important Information:*
+* on Windows:
+** if OpenAL is not installed already, please do so: http://connect.creativelabs.com/openal/Downloads/oalinst.zip
+** if you have a Nvidia GPU: select the Nvidia "OpenCL Platform" in the "Options" menu, set "OpenCL Devices" to "GPU only" and restart the game
+** if you have an ATI/AMD GPU/CPU or an Intel CPU: please install the Intel OpenCL SDK for Windows (64-bit): http://software.intel.com/en-us/vcsource/tools/opencl-sdk
+* on OS X:
+** please install the latest XQuartz: http://xquartz.macosforge.org
+** OpenCL on 10.7.5 and 10.8.2 on non-CPU devices is broken, please use a CPU device for now (this is the default setting, so you don't have to change anything) or use an earlier version of OS X
+** if you have a Nvidia GPU, you can also use CUDA: https://developer.nvidia.com/cuda-downloads (select "CUDA" as the "OpenCL Platform" in the "Options" menu and restart the game)
 
 Requirements:
 * OpenGL 3.2 Core and OpenCL 1.1+ capable graphics card and drivers (i.e. GeForce 8+, Radeon HD4+ or Intel HD 2500/4000)
@@ -72,11 +82,11 @@ Game Sounds:
 * sounddogs.com (http://sounddogs.com/htm/license.htm)
 * wikipedia.org (Public Domain)
 
+Licences:
+* all audio, font and external source code licences are listed in the LICENCES file
+* the source code licence is located in the COPYING file (and all code headers)
+
 Created by:
 * Florian Ziesche (florian.ziesche@gmail.com)
 * Yannic Haupenthal (yhaupenthal@gmail.com)
-
-
-		Thank you for playing our project!
-		We would love to hear your feedback (either CC us via mail or reply to the forum post)!
 
