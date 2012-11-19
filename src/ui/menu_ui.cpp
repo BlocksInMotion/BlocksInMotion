@@ -1042,7 +1042,7 @@ void menu_ui::open_menu(const MENU_TYPE type) {
 }
 
 void menu_ui::save_config() const {
-	e->get_xml()->save_file(e->get_config_doc(), e->data_path("config.xml.local"),
+	e->get_xml()->save_file(e->get_config_doc(), e->data_path("config.xml"),
 							"<!DOCTYPE config PUBLIC \"-//A2E//DTD config 1.0//EN\" \"config.dtd\">");
 }
 

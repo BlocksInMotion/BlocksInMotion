@@ -41,8 +41,8 @@ Notes and Hints:
 * for functioning OpenCL support please install current Nvidia drivers (if you have an Nvidia card) or install the Intel OpenCL SDK/redist to run it on your Intel/AMD CPU (http://software.intel.com/en-us/vcsource/tools/opencl-sdk)
 * OpenCL on AMD GPUs or on AMD CPUs using the AMD OpenCL redist is not supported (you can try, but this will most certainly fail)
 * support for Intel HD 2500/4000 GPUs is considered experimental and was only tested on OS X; if these should work for you on Windows, we'd like to hear your feedback! :)
-* HiDPI/Retina support on OS X is enabled; note that the resolution specified in config.xml or config.xml.local will be doubled (e.g., the default resolution of 1280*720 will become 2560*1440); to achieve a playable framerate, you should set upscaling to "2.0" in config.xml.local (the GUI will still be rendered at the native resolution)
-* due to platform specific issues, fullscreen/windowed mode switching from within the game might not work (set the fullscreen flag manually in data/config.xml.local and restart the game if this happens)
+* HiDPI/Retina support on OS X is enabled; note that the resolution specified in config.xml will be doubled (e.g., the default resolution of 1280*720 will become 2560*1440); to achieve a playable framerate, you should set upscaling to "2.0" in config.xml (the GUI will still be rendered at the native resolution)
+* due to platform specific issues, fullscreen/windowed mode switching from within the game might not work (set the fullscreen flag manually in data/config.xml and restart the game if this happens)
 * don't dig down!
 
 Build Instructions:
