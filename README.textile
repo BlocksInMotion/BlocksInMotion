@@ -46,11 +46,12 @@ Notes and Hints:
 * don't dig down!
 
 Build Instructions:
-* install/build a2elight (https://github.com/a2flo/a2elight/blob/master/README.textile)
+* install/build a2elight (https://github.com/a2flo/a2elight/blob/master/README.textile), git tag "BlocksInMotion"
 * install/build OpenAL (Windows) or OpenALSoft (OS X/Linux), Bullet and MPG123 (links below)
 * hint: on OS X: you can also copy all frameworks from within the BlocksInMotion.app to /Library/Frameworks
 * on Windows/Linux: run "./premake.sh gcc" (or simply "./premake.sh" on Linux if you're using clang/libc++) and "make"
 * on OS X: open BlocksInMotion.xcodeproj and build it
+* read: https://github.com/BlocksInMotion/BlocksInMotion/blob/master/data/music/where_are_the_audio_files.txt
 
 Credits:
 * https://github.com/a2flo/a2elight / a2elight
