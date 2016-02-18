@@ -96,5 +96,5 @@ Licences:
 
 Created by:
 * Florian Ziesche (florian.ziesche@gmail.com)
-* Yannic Haupenthal (yhaupenthal@gmail.com)
+* Yannic Haupenthal (y.h+bim [at] posteo.de)
 
