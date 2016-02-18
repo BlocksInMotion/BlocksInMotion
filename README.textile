@@ -8,6 +8,13 @@ The game includes 5 challenging levels for you to beat - and if this is not enou
 	Have fun and thank you for playing our game!
 	We would also love to hear your feedback (either CC us via mail (addresses at the bottom) or reply to the forum post: http://albion2.org/board/viewtopic.php?f=26&t=243)!
 
+_In-game_
+!https://raw.githubusercontent.com/BlocksInMotion/BlocksInMotion/master/etc/blocksinmotion_1.png(In-game screenshot #1)!
+!https://raw.githubusercontent.com/BlocksInMotion/BlocksInMotion/master/etc/blocksinmotion_2.png(In-game screenshot #2)!
+
+_Editor_
+!https://raw.githubusercontent.com/BlocksInMotion/BlocksInMotion/master/etc/editor_1.png(Editor screenshot #1)!
+!https://raw.githubusercontent.com/BlocksInMotion/BlocksInMotion/master/etc/editor_2.png(Editor screenshot #2)!
 
 
 Before you start, please read the following information:
